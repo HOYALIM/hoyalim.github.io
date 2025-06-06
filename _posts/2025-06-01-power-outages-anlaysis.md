@@ -1,6 +1,6 @@
 ---
 title: "Power Outage Duration Analysis"
-date: 2025-01-06
+date: 2025-06-01
 categories: [Data Science, Projects]
 tags: [Python, Machine Learning, Data Analysis, Plotly]
 author: Ho Lim
@@ -100,6 +100,8 @@ The data cleaning process involved several critical steps to ensure data quality
 
 Understanding the distribution of outage durations helps identify patterns and inform our modeling approach.
 
+<iframe src="/assets/plots/plot_1.html" width="100%" height="600" frameborder="0"></iframe>
+
 ### Key Distribution Characteristics
 
 ```
@@ -123,6 +125,8 @@ Understanding the distribution of outage durations helps identify patterns and i
 
 Analyzing geographic patterns helps identify regional vulnerabilities and infrastructure differences.
 
+<iframe src="/assets/plots/plot_2.html" width="100%" height="600" frameborder="0"></iframe>
+
 ### State-Level Analysis
 
 ```
@@ -139,6 +143,8 @@ Analyzing geographic patterns helps identify regional vulnerabilities and infras
    - Texas: Frequent outages, moderate durations
    - Northeast: Moderate frequency, weather-dependent duration
 ```
+
+<iframe src="/assets/plots/plot_3.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### Climate Region Impact
 
@@ -158,6 +164,8 @@ Analyzing geographic patterns helps identify regional vulnerabilities and infras
 ## Bivariate Analysis: Duration vs Customer Impact
 
 Exploring the relationship between outage duration and the number of customers affected reveals important patterns for resource allocation.
+
+<iframe src="/assets/plots/plot_4.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### Customer Impact Analysis
 
@@ -180,6 +188,8 @@ Exploring the relationship between outage duration and the number of customers a
 
 Understanding temporal patterns helps predict outage likelihood and prepare for high-risk periods.
 
+<iframe src="/assets/plots/plot_5.html" width="100%" height="600" frameborder="0"></iframe>
+
 ### Monthly Distribution
 
 ```
@@ -196,6 +206,8 @@ Understanding temporal patterns helps predict outage likelihood and prepare for 
    
    🌡️  Summer predominance likely due to increased AC demand and severe weather
 ```
+
+<iframe src="/assets/plots/plot_6.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### Cause Category Analysis
 
@@ -222,6 +234,8 @@ Understanding patterns of missing data is crucial for making valid statistical i
 ## NMAR Analysis
 
 Several columns in our dataset contain missing values, and I need to determine whether any of these are likely NMAR (Not Missing At Random). NMAR occurs when the missingness of a value depends on the actual value itself, not on other observed variables.
+
+<iframe src="/assets/plots/plot_7.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### HURRICANE.NAMES Column Analysis
 
@@ -263,6 +277,8 @@ I'll test whether the missingness of outage duration depends on the cause catego
 **Alternative Hypothesis (H₁):** The missingness of `OUTAGE.DURATION` depends on `CAUSE.CATEGORY` (MAR)
 
 **Test Statistic:** Total Variation Distance (TVD) between the distribution of cause categories for missing vs non-missing duration values.
+
+<iframe src="/assets/plots/plot_8.html" width="100%" height="600" frameborder="0"></iframe>
 
 ```
 🎲 Conducting permutation test...
@@ -312,6 +328,8 @@ This question addresses a critical aspect of power grid resilience and emergency
 **Test Statistic:** Difference in sample means (Severe Weather - Other Causes)  
 **Significance Level:** α = 0.05  
 **Method:** One-tailed permutation test with 10,000 iterations
+
+<iframe src="/assets/plots/plot_9.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### Statistical Analysis
 
@@ -549,9 +567,13 @@ The baseline RMSE of ~5,189 minutes (86.5 hours) provides a meaningful benchmark
    - MAE Improvement: 312.8 minutes (11.0% reduction)
 ```
 
+<iframe src="/assets/plots/plot_10.html" width="100%" height="600" frameborder="0"></iframe>
+
 ### Model Performance Comparison
 
 The comparison between our baseline and final models reveals significant improvements in predictive accuracy. Our baseline model used only 2 categorical features (CAUSE.CATEGORY and CLIMATE.CATEGORY) with linear regression, while our final Random Forest model incorporates 45 engineered features and captures non-linear relationships.
+
+<iframe src="/assets/plots/plot_11.html" width="100%" height="600" frameborder="0"></iframe>
 
 ### Feature Importance Analysis
 
@@ -609,6 +631,8 @@ Ensuring fairness across population density groups promotes equitable emergency 
 
 **Metric:** Absolute difference in Root Mean Square Error between groups
 **Threshold:** 200 minutes (3.33 hours) - chosen as practically meaningful difference for emergency planning
+
+<iframe src="/assets/plots/plot_12.html" width="100%" height="600" frameborder="0"></iframe>
 
 ```
 📊 Group Performance Analysis:
@@ -732,4 +756,4 @@ This analysis demonstrates the value of data-driven approaches to understanding 
 - **Statistical Testing**: Custom permutation test implementations for hypothesis testing and fairness analysis  
 - **Machine Learning**: Scikit-learn Random Forest with comprehensive hyperparameter tuning
 - **Visualization**: Plotly for interactive data exploration and results presentation
-- **Reproducibility**: All analysis conducted with fixed random seeds and version-controlled code 
+- **Reproducibility**: All analysis conducted with fixed random seeds and version-controlled code
