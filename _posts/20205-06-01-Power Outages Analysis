@@ -1,0 +1,10 @@
+---
+title: "Power Outage Duration Analysis: DSC 80 Final Project"
+date: 2025-01-06
+categories: [Data Science, Projects]
+tags: [Python, Machine Learning, Data Analysis, Plotly, DSC80]
+author: Ho Lim
+excerpt: "Analyze outage data to predict duration and analyze patterns"
+header:
+  teaser: /assets/images/power-outage-teaser.jpg
+---
