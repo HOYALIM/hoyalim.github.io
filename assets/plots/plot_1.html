@@ -7,12 +7,28 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
         }
         .plotly-graph-div {
             width: 100%;
-            height: 600px;
+            height: 100%;
+            min-height: 500px;
+        }
+        h2 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .plotly-graph-div {
+                min-height: 400px;
+            }
+            h2 {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -34,22 +50,36 @@
         var data = [trace1];
 
         var layout = {
-            title: 'Top 5 States by Number of Power Outages',
+            title: {
+                text: 'Distribution of Power Outage Durations',
+                font: { size: 16 }
+            },
             xaxis: {
-                title: 'State'
+                title: 'Duration (minutes)',
+                automargin: true
             },
             yaxis: {
-                title: 'Number of Outages'
+                title: 'Count',
+                automargin: true
             },
             margin: {
-                t: 80,
+                t: 60,
                 b: 50,
-                l: 50,
-                r: 50
-            }
+                l: 60,
+                r: 20
+            },
+            autosize: true,
+            showlegend: false
         };
 
-        Plotly.newPlot('plotly-div', data, layout, {responsive: true});
+        var config = {
+            responsive: true,
+            displayModeBar: true,
+            displaylogo: false,
+            modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
+        };
+
+        Plotly.newPlot('plotly-div', data, layout, config);
     </script>
 </body>
 </html>

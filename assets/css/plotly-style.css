@@ -1,0 +1,108 @@
+/* Plotly visualization styles for Jekyll blog posts */
+
+.plotly-container {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+}
+
+.plotly-iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .plotly-iframe {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plotly-iframe {
+    height: 350px;
+  }
+}
+
+/* Code output styling */
+.code-output {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 15px 0;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Visualization caption styling */
+.viz-caption {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Section spacing improvements */
+.analysis-section {
+  margin: 40px 0;
+}
+
+.analysis-section h3 {
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Table styling improvements */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Text content improvements */
+.content-wrapper {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+/* Statistics display */
+.stats-highlight {
+  background-color: #e7f3ff;
+  border-left: 4px solid #007acc;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.stats-highlight strong {
+  color: #005c99;
+}
