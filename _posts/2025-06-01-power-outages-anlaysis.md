@@ -12,8 +12,6 @@ header:
 # Power Outage Duration Analysis Project
 
 **Name:** Ho Lim  
-**Website:** [GitHub Repository](https://github.com/HOYALIM/power-outages-anlaysis)
-
 ---
 
 # Step 1: Introduction
