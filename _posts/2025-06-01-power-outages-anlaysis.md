@@ -1,6 +1,6 @@
 ---
 title: "Power Outage Duration Analysis"
-date: 2025-01-06
+date: 2025-06-01
 categories: [Data Science, Projects]
 tags: [Python, Machine Learning, Data Analysis, Plotly]
 author: Ho Lim
@@ -12,8 +12,6 @@ header:
 # Power Outage Duration Analysis Project
 
 **Name:** Ho Lim  
-**Website:** [GitHub Repository](https://github.com/HOYALIM/power-outages-anlaysis)
-
 ---
 
 # Step 1: Introduction
